@@ -930,11 +930,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: e752d601-dbee-428c-9f8a-013a07c8c897
+  cloudProjectId: 02c8b122-3219-42a7-920a-3060517012e3
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: My project 2025-01-17_23-36-09
-  organizationId: vampireplus123
+  projectName: GameJam2025 2025-01-17_22-39-34
+  organizationId: khanhhuy1714
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
