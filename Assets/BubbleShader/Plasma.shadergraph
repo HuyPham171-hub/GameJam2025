@@ -635,7 +635,7 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "d0a0d7134b324cad843647a02f25a4d7"
+                    "m_Id": "9114d3c9689943908e2b8f4fa0f34146"
                 },
                 "m_SlotId": 0
             }
@@ -1348,8 +1348,8 @@
     "m_ObjectId": "0ac4c7e0791648cab655fe5809eb89a1",
     "m_Title": "Scrolling Texture",
     "m_Position": {
-        "x": -1148.800048828125,
-        "y": 316.800048828125
+        "x": -1148.7998046875,
+        "y": 316.79998779296877
     }
 }
 
@@ -3242,7 +3242,7 @@
     "m_ObjectId": "6c687c21df2a440081a89a7e1e829f26",
     "m_Title": "Distortion Effect",
     "m_Position": {
-        "x": -1024.0,
+        "x": -1023.9998779296875,
         "y": 1398.39990234375
     }
 }
@@ -3268,7 +3268,7 @@
     "m_ObjectId": "6cba8ce258ea4353bffcafe8531e2418",
     "m_Title": "Surface Movement",
     "m_Position": {
-        "x": -1188.800048828125,
+        "x": -1188.7998046875,
         "y": -839.2000122070313
     }
 }
