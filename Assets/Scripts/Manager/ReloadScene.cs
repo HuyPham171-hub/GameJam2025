@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement; // Required for scene management
 
 public class ReloadScene : MonoBehaviour
 {
     public static ReloadScene Instance;
+    public TextMeshProUGUI StatusText;
 
     // Awake is called before Start and is used for initialization
     private void Awake()
@@ -29,9 +31,14 @@ public class ReloadScene : MonoBehaviour
     {
         // Reload the current scene by using SceneManager
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameController.Instance.GameStart();
     }
     public void SettingStatus(bool isActive)
     {
         gameObject.SetActive(isActive);
+    }
+    public void SettingText(string statusText)
+    {
+        StatusText.text = statusText;
     }
 }

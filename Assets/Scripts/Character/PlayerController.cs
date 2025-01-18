@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
     public float PlayerMovementSpeed = 10f; // Tốc độ di chuyển
     CharacterController characterController;
+    public bool isDead;
     // Khởi tạo
     void Start()
     {
@@ -42,8 +43,19 @@ public class PlayerController : MonoBehaviour
         Vector3 dir = transform.forward * vertical + transform.right*horizontal;
         characterController.Move(dir*PlayerMovementSpeed*Time.deltaTime);
     }
+    void OnTriggerEnter(Collider other)
+    {
+        // Check if the other object has the "Player" tag
+        if (other.CompareTag("Destination"))
+        {
+            Debug.LogWarning("Touch Destination");
+            GameController.Instance.Winner();
+        }
+    }
     public void TakeDame()
     {
         Destroy(gameObject);
+        isDead = true;
+        GameController.Instance.PlayerIsDead();
     }
 }
