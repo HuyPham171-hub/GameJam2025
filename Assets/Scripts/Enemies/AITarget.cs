@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class AITarget : MonoBehaviour
@@ -9,6 +11,8 @@ public class AITarget : MonoBehaviour
 
     private NavMeshAgent m_Agent; // Agent dùng để di chuyển
     private float m_DistanceToTarget; // Khoảng cách giữa enemy và Player
+    public GameObject Particle;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,7 +30,6 @@ public class AITarget : MonoBehaviour
             Debug.LogError("Không tìm thấy đối tượng với tag 'Player'.");
         }
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -42,6 +45,7 @@ public class AITarget : MonoBehaviour
                 // Dừng lại để tấn công
                 m_Agent.isStopped = true;
                 Debug.Log("Attack!");
+                StartCoroutine(waitForDie());
             }
             else
             {
@@ -68,4 +72,20 @@ public class AITarget : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, AttackDistance);
     }
+
+  public IEnumerator waitForDie()
+    {
+        // Wait for a specified time (for example, 2 seconds)
+        yield return new WaitForSeconds(0.2f);
+
+        // Destroy the enemy game object
+        Destroy(gameObject);
+
+        // Optionally, you can instantiate a particle effect at the enemy's position before destroying it
+        if (Particle != null)
+        {
+            Instantiate(Particle, transform.position, Quaternion.identity);
+        }
+    }
+
 }
